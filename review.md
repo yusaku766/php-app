@@ -8,39 +8,72 @@
 <a href="edit.php?todo_id=123&todo_content=焼肉">更新</a>
 ```
 
+$_GETの
+todo_idには123という値が
+todo_contentには焼肉という値が格納される。
+
 ### 以下のフォームの送信ボタンを押下した際にstore.phpの$_POSTにどんな値が格納されるか説明してください。
 
 ```html
 <form action="store.php" method="post">
     <input type="text" name="id" value="123">
-		<textarea　name="content">焼肉</textarea>
+    <textarea name="content">焼肉</textarea>
     <button type="submit">送信</button>
 </form>
 ```
 
+$_POSTの
+idには123という値が
+contentには焼肉という値が格納される。
+
 ### `require_once()` は何のために記述しているか説明してください。
+
+require_once() は指定したファイルを読み込み、そのファイルに含まれるコードを実行するために記述する。これにより、クラス、関数、設定などをファイルから取り込むことができる。
 
 ### `savePostedData($post)`は何をしているか説明してください。
 
+投稿されたデータ$postを検証し必要に応じて加工した後、データベースやファイルに保存する処理を行う。
+
 ### `header('location: ./index.php')`は何をしているか説明してください。
+
+header()はブラウザに対してリダイレクトを指示するPHPの関数で、具体的にはHTTPレスポンスのヘッダーに「Location」フィールドを設定し、ブラウザに現在のページから ./index.php へ自動的に移動するように指示します。
 
 ### `getRefererPath()`は何をしているか説明してください。
 
+getRefererPath()はHTTPリファラからパス部分を取得する関数で、ユーザーが現在のページにアクセスする前に訪れていたページのURLのパス部分を取得して返す。
+
 ### `connectPdo()` の返り値は何か、またこの記述は何をするための記述か説明してください。
+
+connectPdo()` の返り値はPdoオブジェクトである。
+この記述は指定されたデータベースに接続するためのPDOオブジェクトを取得するために必要。
 
 ### `try catch`とは何か説明してください。
 
+try-catchは、プログラムで発生する可能性のあるエラーや例外を処理するための構文。
+tryでエラーが発生する可能性のあるコードを囲み、
+catchでtry ブロック内でエラーが発生したときに実行される処理を指定する。
+この構文を使うことで、エラーが発生してもプログラムがクラッシュせず、適切にエラー処理が行えるようになる。
+
 ### Pdoクラスをインスタンス化する際に`try catch`が必要な理由を説明してください。
+
+PDOクラスのインスタンス化にtry-catchを使用する理由は、データベース接続中に発生する可能性のあるエラーを適切に処理し、プログラムの安定性と信頼性を保つため。
 
 ## 新規作成
 
 ### `createTodoData($post)`は何をしているか説明してください。
 
+引数として受け取った$postデータを基に新しいTodoアイテムを作成・保存しデータベースに追加している。
+
 ## 一覧
 
 ### `getTodoList()`の返り値について説明してください。
 
+getTodoList()の返り値はgetAllRecords()である。getAllRecords()の返り値はtodosテーブルから取得した全てのレコードの中で、deleted_atがNULLであるレコードのみを返す。
+よってgetTodoList()はtodosテーブルのdeleted_atがNULLであるレコードを返す。
+
 ### `<?= ?>`は何の省略形か説明してください。
+
+<?= ?>はショートタグと呼ばれる構文であり、PHPのecho文を簡潔に書くための省略形である。
 
 ## 更新
 
