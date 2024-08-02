@@ -8,9 +8,8 @@
 <a href="edit.php?todo_id=123&todo_content=焼肉">更新</a>
 ```
 
-$_GETの
-todo_idには123という値が
-todo_contentには焼肉という値が格納される。
+$_GETには、todo_idキーに123という数値、todo_contentキーに焼肉という文字列をもつ連想配列が格納される。
+
 
 ### 以下のフォームの送信ボタンを押下した際にstore.phpの$_POSTにどんな値が格納されるか説明してください。
 
@@ -22,9 +21,7 @@ todo_contentには焼肉という値が格納される。
 </form>
 ```
 
-$_POSTの
-idには123という値が
-contentには焼肉という値が格納される。
+$_POSTには、idキーには123という値が、contentキーには焼肉という文字列をもつ連想配列が格納される。
 
 ### `require_once()` は何のために記述しているか説明してください。
 
